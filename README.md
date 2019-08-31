@@ -1,5 +1,6 @@
 #  The missing CSS-like module for SwiftUI
-> Check out the [example project using SwiftUI-CSS](https://github.com/hite/SwiftUI-CSS_example)
+> Check out the [example project using SwiftUI-CSS](https://github.com/hite/SwiftUI-CSS_example);
+> Also, Swift Package availble which url is `https://github.com/hite/SwiftUI-CSS`
 
 The SwiftUI is a great UI development framework for the iOS app. After I wrote some to-be-released app with SwiftUI framework, I realized that I need a solution to write more clear, simple, view-style-decoupled code with lots of custom style design.
 
