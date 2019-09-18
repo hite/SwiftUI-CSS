@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftUI-CSS",
+    name: "SwiftUI_CSS",
     platforms: [
         // specify each minimum deployment requirement,
         //otherwise the platform default minimum is used.
@@ -13,8 +13,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "SwiftUI-CSS",
-            targets: ["SwiftUI-CSS"]),
+            name: "SwiftUI_CSS",
+            targets: ["SwiftUI_CSS"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -24,11 +24,10 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "SwiftUI-CSS",
-            path: "Sources/SwiftUI-CSS"
-        ),
+            name: "SwiftUI_CSS",
+            dependencies: []),
         .testTarget(
-            name: "SwiftUI-CSSTests",
-            dependencies: ["SwiftUI-CSS"]),
+            name: "SwiftUI_CSSTests",
+            dependencies: ["SwiftUI_CSS"]),
     ]
 )
