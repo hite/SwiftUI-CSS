@@ -57,7 +57,7 @@ public struct CSSStyle {
     
     fileprivate var properties: [CSSProperty]
     
-    init(_ properties: [CSSProperty]) {
+    public init(_ properties: [CSSProperty]) {
         self.properties = properties
     }
     
@@ -190,11 +190,11 @@ struct CSSStyleModifier: ViewModifier {
 
 extension View {
 
-    func addClassName(_ clsName: CSSStyle) -> some View {
+    public func addClassName(_ clsName: CSSStyle) -> some View {
         ModifiedContent(content: self, modifier: CSSStyleModifier(styleSheet: clsName))
     }
     
-    func setStyle(_ properties: [CSSProperty]) -> some View {
+    public func setStyle(_ properties: [CSSProperty]) -> some View {
         ModifiedContent(content: self, modifier: CSSStyleModifier(styleSheet: CSSStyle(properties)))
     }
     
