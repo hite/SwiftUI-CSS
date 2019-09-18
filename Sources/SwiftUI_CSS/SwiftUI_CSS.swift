@@ -17,7 +17,7 @@ extension View {
     }
 }
 
-enum CSSProperty {
+public enum CSSProperty {
     case font(Font)
     case foregroundColor(Color)
     case backgroundColor(Color)
@@ -53,7 +53,7 @@ extension CSSProperty {
     
 }
 
-struct CSSStyle {
+public struct CSSStyle {
     
     fileprivate var properties: [CSSProperty]
     
