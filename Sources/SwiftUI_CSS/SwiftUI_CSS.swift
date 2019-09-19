@@ -178,6 +178,12 @@ public struct CSSStyle {
     
 }
 
+extension CSSStyle {
+    public static func +(left: CSSStyle, right: CSSStyle) -> CSSStyle{
+        return CSSStyle(left.properties + right.properties)
+    }
+}
+
 struct CSSStyleModifier: ViewModifier {
     fileprivate let styleSheet: CSSStyle
     
