@@ -75,7 +75,7 @@ let languageDesc_clsName = CSSStyle([
     .flexHeight(min: 50, max: .infinity)
 ])
 ```
-## 2. use module system for reuse or create a custom desing system.
+## 2. use module system for reuse or create a custom design system.
 *module system* help to reuse some common style design across the whole app which can save you to write same codes everywhere or avoid to make some mistakes.
 
 ### Without SwifUI-CSS:
@@ -104,7 +104,7 @@ If you change the style of Text("28 October 2014"), you must change the style of
 ```
 ### With SwiftUI-CSS
 You can change the definition of wikiDesc_clsName once for all.
-``` switfui
+``` swift
 let wikiDesc_clsName = CSSStyle([
     .font(Font.system(size: 12)),
     .foregroundColor(NormalDescColor)
@@ -132,7 +132,7 @@ let wikiDesc_clsName = CSSStyle([
 
 ## the other benefits of using SwiftUI-CSS
 1. more easy to change a lot of styles when state change.
-``` switfui
+``` swift
 // without swiftui-css
 if festival == 'Christmas' {
      Text("Welcome everyone!")
