@@ -154,7 +154,15 @@ Text("Welcome everyone!")
 3. write less code, clear to tell parameters meanings. For example. 
 > `.frame(minHeight: 50, maxheight: .infinity` to `.flexHeight(min: 50, max: .infinity)`
 > `.padding(EdgeInset(top:10, leading: 15, bottom:0, trailing: 20)` to `.paddingTLBT(10,15,0,20)`
-4. (to be continued)
+4. You can combile some different style into one.
+```swift
+let fontStyle = CSSStyle([.font(.caption)])
+        let colorStyle = CSSStyle([.backgroundColor(.red)])
+        
+        let finalStyle = fontStyle + colorStyle
+        print("finalStyle = \(finalStyle)")
+```
+5. (to be continued)
 
 
 
