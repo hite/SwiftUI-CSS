@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-class Responsive: ObservableObject {
+public class Responsive: ObservableObject {
     /// For example. the size of view in sketch file designed for iPhone 6 should larger  on iPhone by 1.104 ( 414 / 375) times.
     /// so the factor = 1.104
     @Published var factor: CGFloat
