@@ -1,7 +1,7 @@
 #  The missing CSS-like module for SwiftUI
 > Check out the [example project using SwiftUI-CSS](https://github.com/hite/SwiftUI-CSS_example);
 > Also, Swift Package availble which url is `https://github.com/hite/SwiftUI-CSS`
-
+> Supported macOS(.v10_14), .iOS(.v13)
 The SwiftUI is a great UI development framework for the iOS app. After I wrote some to-be-released app with SwiftUI framework, I realized that I need a solution to write more clear, simple, view-style-decoupled code with lots of custom style design.
 
 So here is **SwiftUI-CSS**. With **SwiftUI-CSS**, you can:
@@ -162,7 +162,15 @@ let fontStyle = CSSStyle([.font(.caption)])
         let finalStyle = fontStyle + colorStyle
         print("finalStyle = \(finalStyle)")
 ```
-5. (to be continued)
-
+5. use responsive class to make view larger on larger screen
+```swift
+// In iOS, if the sketch file designed for screen 375x667, the responsive fator should be compared to UIScreen.main.bounds.size.width.
+let responsive = Responsive(UIScreen.main.bounds.size.width / 375)
+let wikiDesc_clsName = CSSStyle([
+    .font(Font.system(size: responsive.r(12))),
+    .foregroundColor(NormalDescColor)
+    .paddingEdges([.bottom], responsive.r(10))
+])
+```
 
 
