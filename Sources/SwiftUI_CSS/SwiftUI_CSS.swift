@@ -205,7 +205,7 @@ extension View {
     }
     
     func changeClassName(_ clsName: CSSStyle) -> some View {
-        // 省略
+        //
         return self
     }
 
