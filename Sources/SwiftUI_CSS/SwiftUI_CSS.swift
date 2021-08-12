@@ -53,12 +53,22 @@ extension CSSProperty {
     
 }
 
-public struct CSSStyle {
-    
+public struct CSSStyle {    
     fileprivate var properties: [CSSProperty]
+    
+    public init(_ properties: CSSProperty...) {
+        self.properties = properties
+    }
     
     public init(_ properties: [CSSProperty]) {
         self.properties = properties
+    }
+    
+    public init(_ classes: [CSSStyle]) {
+        self.properties = []
+        for classItem in classes {
+            self.properties += classItem.properties
+        }
     }
     
     func applyStyle(content: AnyView) -> AnyView {
@@ -195,12 +205,11 @@ struct CSSStyleModifier: ViewModifier {
 
 
 extension View {
-
-    public func addClassName(_ clsName: CSSStyle) -> some View {
-        ModifiedContent(content: self, modifier: CSSStyleModifier(styleSheet: clsName))
+    public func addClassName(_ clsName: CSSStyle...) -> some View {
+        ModifiedContent(content: self, modifier: CSSStyleModifier(styleSheet: CSSStyle(clsName)))
     }
     
-    public func setStyle(_ properties: [CSSProperty]) -> some View {
+    public func setStyle(_ properties: CSSProperty...) -> some View {
         ModifiedContent(content: self, modifier: CSSStyleModifier(styleSheet: CSSStyle(properties)))
     }
     
@@ -208,5 +217,4 @@ extension View {
         //
         return self
     }
-
 }
